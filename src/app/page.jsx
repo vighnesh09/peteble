@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 // import Hero from '@/app/pages/hero'
-import Home from '@/app/Pages/index'
-import Slider from '@/app/Component/slider'
-import Footer from '@/app/Component/footer'
+import Home from "@/app/Component/Home";
+import Slider from "@/app/Component/slider";
+import Footer from "@/app/Component/footer";
 
 const page = () => {
   return (
-  <div>
-    {/* <Hero/> */}
-    <Home/>
-    <Slider/>
-    <Footer/>
-  </div>
-  )
-}
+    <div>
+      {/* <Hero/> */}
+      <Home />
+      <Slider />
+      <Footer />
+    </div>
+  );
+};
 
-export default page
+export default page;

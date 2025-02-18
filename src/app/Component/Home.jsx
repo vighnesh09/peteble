@@ -1,21 +1,18 @@
-'use client'
+"use client";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import GetButton from "../Component/GetButton";
+import GetButton from "./GetButton";
 import { IoCallOutline } from "react-icons/io5";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/navigation";
 
 const home = () => {
+  const router = useRouter();
 
-  // const router = useRouter();
-  // const handleClick = () => {
-  //   if (router.isReady) {
-  //     router.push('/form');
-  //     console.log("hejw"); // This will be logged after navigating
-  //   } else {
-  //     console.log('Router is not ready yet!');
-  //   }
-  // };
+  const handleRedirect = () => {
+    router.push("/form");
+  };
+
+  
   const points = {
     A: "Paws or ears that smell “cheesy.”",
     B: "Occasional loose stools etc.",
@@ -23,10 +20,8 @@ const home = () => {
     D: "Less energy.",
   };
 
-  
   return (
     <>
-
       {/* hero sac */}
       <div className="h-screen">
         <nav className="bg-[#FDE8DB] h-[60px] md:h-[80px] w-full ">
@@ -46,9 +41,17 @@ const home = () => {
           {/* left */}
           <div className=" w-full md:w-[44%] h-[50%] flex flex-col items-center md:items-start justify-center pl-0 md:pl-[8vw]">
             <div className="flex flex-row items-center justify-start pb-4 ">
-              <img src="/singleS.svg" alt="" className=" h-[15px] sm:h-[20px]" />
+              <img
+                src="/singleS.svg"
+                alt=""
+                className=" h-[15px] sm:h-[20px]"
+              />
               <h1 className="font-semibold">TrustPilot</h1>
-              <img src="/start.svg" alt="" className="ml-2 h-[15px] sm:h-[20px]" />
+              <img
+                src="/start.svg"
+                alt=""
+                className="ml-2 h-[15px] sm:h-[20px]"
+              />
             </div>
             <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4vw] font-semibold font-Inter">
               <h1>Transform your</h1>
@@ -59,24 +62,35 @@ const home = () => {
             </div>
 
             <div className="flex-col  items-center justify-center">
-
-              <button className="px-6  py-2 bg-[#F37220] rounded-md text-white mt-[50px] flex items-center justify-center "
-              //  onClick={handleClick}
-               >Get Started
+              <button
+                className="px-6  py-2 bg-[#F37220] rounded-md text-white mt-[50px] flex items-center justify-center "
+                //  onClick={handleClick}
+                onClick={handleRedirect}
+              >
+                Get Started
                 <FaArrowRightLong className="text-sm ml-2" />
               </button>
-              <p className="text-sm mt-2">Over <span className="font-sm font-semibold">5,000,000</span> chews delivered!</p>
+              <p className="text-sm mt-2">
+                Over <span className="font-sm font-semibold">5,000,000</span>{" "}
+                chews delivered!
+              </p>
             </div>
           </div>
           {/* right */}
           <div className=" w-full md:w-[54%]  h-[50%] flex items-start md:items-center justify-center pt-[0%] md:pt-0 object-contain">
-            <img src="/DOG.png" alt="" className=" rounded-md h-[99%] w-[90%] md:h-auto md:w-[85%] object-cover" />
-
-
+            <img
+              src="/DOG.png"
+              alt=""
+              className=" rounded-md h-[99%] w-[90%] md:h-auto md:w-[85%] object-cover"
+            />
           </div>
         </div>
         <div className="bg-black h-[50px] w-full text-white text-center absolute bottom-0">
-          <p className="pt-2 sm:pt-4 text-xs sm:text-md font-Inter">More than <span className="text-[#F37220]">85%</span> of customers say that their dog prefers The Petibles Table to their old supplements</p>
+          <p className="pt-2 sm:pt-4 text-xs sm:text-md font-Inter">
+            More than <span className="text-[#F37220]">85%</span> of customers
+            say that their dog prefers The Petibles Table to their old
+            supplements
+          </p>
         </div>
       </div>
       {/* page-2 */}
@@ -115,11 +129,14 @@ const home = () => {
                 })}
               </div>
               <div className="flex-col  items-center justify-center">
-
-                <button className="px-6    py-2 bg-[#F37220] rounded-md text-white mt-[50px] flex items-center justify-center ">Get Started
+                <button className="px-6    py-2 bg-[#F37220] rounded-md text-white mt-[50px] flex items-center justify-center ">
+                  Get Started
                   <FaArrowRightLong className="text-sm ml-2" />
                 </button>
-                <p className="text-sm mt-2">Over <span className="font-sm font-semibold">5,000,000</span> chews delivered!</p>
+                <p className="text-sm mt-2">
+                  Over <span className="font-sm font-semibold">5,000,000</span>{" "}
+                  chews delivered!
+                </p>
               </div>
             </div>
           </div>
@@ -195,8 +212,8 @@ const home = () => {
                   <FaArrowRightLong className="text-sm ml-2" />
                 </button>
                 <p className="text-sm mt-2">
-                  Over <span className="font-sm font-bold">5,000,000</span> chews
-                  delivered!
+                  Over <span className="font-sm font-bold">5,000,000</span>{" "}
+                  chews delivered!
                 </p>
               </div>
             </div>
@@ -224,13 +241,18 @@ const home = () => {
                   className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] font-medium"
                   style={{ fontFamily: "Montserrat" }}
                 >
-                  Our best-selling Probiotic Chews are made with a special blend of 3 probiotic strains.
+                  Our best-selling Probiotic Chews are made with a special blend
+                  of 3 probiotic strains.
                 </p>
                 <p
                   className="text-[10px] pt-4 sm:text-[12px] md:text-[14px] lg:text-[16px] font-medium"
                   style={{ fontFamily: "Montserrat" }}
                 >
-                  The formula supports a healthy gut and immune system – which minimizes the impact of allergens and other contaminants while supporting digestive health. This means less occasional discomfort, loose stools, licking, head shacking, itching and general comfort and wellbeing.
+                  The formula supports a healthy gut and immune system – which
+                  minimizes the impact of allergens and other contaminants while
+                  supporting digestive health. This means less occasional
+                  discomfort, loose stools, licking, head shacking, itching and
+                  general comfort and wellbeing.
                 </p>
               </div>
               <div className="flex-col hidden md:block items-center justify-center">
@@ -239,8 +261,8 @@ const home = () => {
                   <FaArrowRightLong className="text-sm ml-2" />
                 </button>
                 <p className="text-sm mt-2">
-                  Over <span className="font-sm font-bold">5,000,000</span> chews
-                  delivered!
+                  Over <span className="font-sm font-bold">5,000,000</span>{" "}
+                  chews delivered!
                 </p>
               </div>
             </div>
