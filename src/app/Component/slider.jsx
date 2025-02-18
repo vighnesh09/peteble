@@ -122,18 +122,18 @@ const Slider = () => {
 
         {/* Navigation buttons */}
         <button
-  onClick={handlePrev}
-  className="absolute top-1/2 h-[50px] w-[50px] left-4 transform -translate-y-1/2  flex items-center justify-center rounded-full "
->
-  <img src="/Laero.svg" alt="" />
-</button>
-<button
-  onClick={handleNext}
-  className="absolute top-1/2 h-[50px] w-[50px] right-4 transform -translate-y-1/2   flex items-center justify-center rounded-full "
->
-<img src="/Raero.svg" alt="" />
+          onClick={handlePrev}
+          className="absolute top-1/2 h-[50px] w-[50px] left-4 transform -translate-y-1/2  flex items-center justify-center rounded-full "
+        >
+          <img src="/Laero.svg" alt="" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 h-[50px] w-[50px] right-4 transform -translate-y-1/2   flex items-center justify-center rounded-full "
+        >
+          <img src="/Raero.svg" alt="" />
 
-</button>
+        </button>
       </div>
     </div>
   );

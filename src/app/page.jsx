@@ -1,8 +1,8 @@
 import React from 'react'
 // import Hero from '@/app/pages/hero'
-import Home from '@/app/home/page'
-import Slider from '@/Component/slider'
-import Footer from '@/Component/footer'
+import Home from '@/app/Pages/index'
+import Slider from '@/app/Component/slider'
+import Footer from '@/app/Component/footer'
 
 const page = () => {
   return (

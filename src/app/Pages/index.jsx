@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import GetButton from "../../Component/GetButton";
+import GetButton from "../Component/GetButton";
 import { IoCallOutline } from "react-icons/io5";
 import { useRouter } from 'next/router';
 

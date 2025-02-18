@@ -38,11 +38,11 @@ const FAQ = [
 const footer = () => {
   const [selectedItem, setSelectedItem] = useState(FAQ[0].id);
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  const navigateToAbout = () => {
-    router.push('/form'); // Navigates to the About page
-  };
+  // const navigateToAbout = () => {
+  //   router.push('/form'); // Navigates to the About page
+  // };
 
   const handleAnsShow = (questionId) => {
     setSelectedItem((prev) => (prev === questionId ? null : questionId));
@@ -106,7 +106,7 @@ const footer = () => {
           <div className='h-full flex flex-col items-center justify-center'>
             <img src="logo.svg" alt="" />
             <div className='flex  items-center justify-center gap-2'>
-              <img src="insta.svg" alt=""  onClick={navigateToAbout} />
+              <img src="insta.svg" alt=""   />
               <img src="fb.svg" alt="" />
               <img src="x.svg" alt="" />
             </div>
