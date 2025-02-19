@@ -26,10 +26,10 @@ export default function RootLayout({ children }) {
           @import
           url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
         </style>
-<style>
-  @import
+        <style>
+          @import
           url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+        </style>
         {children}
       </body>
     </html>

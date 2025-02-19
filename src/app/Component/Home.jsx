@@ -24,6 +24,7 @@ const home = () => {
     <>
       {/* hero sac */}
       <div className="h-screen">
+
         <nav className="bg-[#FDE8DB] h-[60px] md:h-[80px] w-full ">
           <div className="flex items-center justify-between mx-5 md:mx-20 pt-3 md:pt-4">
             <div>
@@ -36,24 +37,28 @@ const home = () => {
               <button className="font-Montserrat">Call Us</button>
             </div>
           </div>
+
         </nav>
+        
         <div className="flex md:flex-row flex-col items-center justify-between m-2 h-[82%]">
+        <img src="/panjo.svg" alt="" className="hidden md:block absolute top-[472px] left-[663px] z-[-1]"/>
           {/* left */}
           <div className=" w-full md:w-[44%] h-[50%] flex flex-col items-center md:items-start justify-center pl-0 md:pl-[8vw]">
-            <div className="flex flex-row items-center justify-start pb-4 ">
+            <div className="flex flex-row items-center justify-start md:pb-4 ">
               <img
                 src="/singleS.svg"
                 alt=""
                 className=" h-[15px] sm:h-[20px]"
               />
-              <h1 className="font-semibold">TrustPilot</h1>
+              <h1 className="font-semibold text-[11.9px] md:text-[26px]">TrustPilot</h1>
               <img
                 src="/start.svg"
                 alt=""
                 className="ml-2 h-[15px] sm:h-[20px]"
               />
             </div>
-            <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4vw] font-semibold font-Inter">
+            <div className="flex flex-col items-center justify-center">
+            <div className="text-[32px] space-y-[-10px] flex flex-col items-center md:items-center sm:text-[40px] md:text-[48px] lg:text-[56px] font-bold font-Inter">
               <h1>Transform your</h1>
               <h1>
                 pet's <span className="text-[#F37220]">health care</span>
@@ -61,9 +66,9 @@ const home = () => {
               <h1>with petibles</h1>
             </div>
 
-            <div className="flex-col  items-center justify-center">
+            <div className="flex flex-col pt-4 md:pt-0 items-center justify-start">
               <button
-                className="px-6  py-2 bg-[#F37220] rounded-md text-white mt-[50px] flex items-center justify-center "
+                className="px-6 py-2 bg-[#F37220] rounded-md text-white md:mt-[50px] flex items-center justify-center "
                 //  onClick={handleClick}
                 onClick={handleRedirect}
               >
@@ -75,9 +80,10 @@ const home = () => {
                 chews delivered!
               </p>
             </div>
+            </div>
           </div>
           {/* right */}
-          <div className=" w-full md:w-[54%]  h-[50%] flex items-start md:items-center justify-center pt-[0%] md:pt-0 object-contain">
+          <div className=" w-full md:w-[54%]  h-[50%] flex items-start md:items-center justify-center pt-[0%] md:pt-0 object-contain ">
             <img
               src="/DOG.png"
               alt=""
