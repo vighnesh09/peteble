@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Peteble Survey Site
 
-## Getting Started
 
-First, run the development server:
+## About The Project
+Peteble Survey Site is a modern web application built with Next.js for conducting pet-related surveys and gathering valuable insights from pet owners. This platform provides an interactive and user-friendly interface for pet surveys and data collection.
 
+## System Requirements
+* Node.js 18.x or later
+* Windows, macOS, or Linux operating system
+* Git installed on your system
+* A package manager (npm, yarn, pnpm, or bun)
+
+## Installation Guide
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/vighnesh09/peteble.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Navigate to Project Directory
+```bash
+cd peteble-survey
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Install Dependencies
+Using npm:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 5. Start Development Server
+Using npm:
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Available Scripts
+Development:
+```bash
+npm run dev    # Start development server
+```
+
+Production Build:
+```bash
+npm run build  # Create production build
+npm start      # Start production server
+```
+
+
+## Testing Application
+1. Open your browser and navigate to:
+```plaintext
+http://localhost:3000
+```
+
+
+
+
+
+
+## Built With
+* Next.js 13+
+* React
+* TypeScript
+* Tailwind CSS

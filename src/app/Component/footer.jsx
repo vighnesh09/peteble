@@ -51,33 +51,33 @@ const footer = () => {
 
   return (
     <>
-      <div className=" md:h-screen flex flex-col items-start md:items-center justify-start py-10 ">
+      <div className=" md:h-full flex flex-col items-start md:items-center justify-start py-10 ">
         <p
-          className="md:hidden ml-4 text-[12px] text-[#F57322] font-semibold"
+          className="md:hidden ml-4 text-[13px] pb-4 text-[#F57322] font-bold font-Montserrat"
           style={{ fontFamily: "Montserrat" }}
         >
           FAQ
         </p>
         <h1
-          className="text-[24px] lg:text-[48px] text-center text-[#1D2939] font-semibold ml-4 "
+          className="text-[1.7rem] md:text-[40px] lg:text-[48px] text-center text-[#1D2939] font-bold ml-4 "
           style={{ fontFamily: "Inter" }}
         >
           Frequently Asked Questions
         </h1>
 
-        <div className="w-full max-w-4xl mt-10">
+        <div className="w-full max-w-4xl  mt-2 md:mt-10 ">
           {FAQ.map((question, index) => {
             return (
               <div
                 key={index}
-                className={`border mb-3 m-4 rounded-lg d cursor-pointer ${
+                className={`border mb-3 m-4  rounded-xl d cursor-pointer px-2 py-3 ${
                   selectedItem === question.id && "bg-[#F0F0F0]"
                 }`}
                 onClick={() => handleAnsShow(question.id)} // Toggle the visibility of the answer
               >
-                <div className="flex justify-between items-center px-6 py-4">
+                <div className="flex justify-between items-center  md:px-6 md:py-4">
                   <h2
-                    className="text-[14px]  md:text-[20px] lg:text-[24px] font-semibold text-[#1A151A] "
+                    className="text-[1rem]  md:text-[20px] lg:text-[24px] font-semibold text-[#1A151A] "
                     style={{ fontFamily: "Inter" }}
                   >
                     {question.question}
@@ -87,12 +87,13 @@ const footer = () => {
                       selectedItem === question.id ? "/minus.svg" : "/plus.svg"
                     } // Toggle icon based on selection
                     alt="toggle icon"
-                    className="w-6 h-6"
+                    className="w-8 h-8"
                   />
                 </div>
 
                 {selectedItem === question.id && (
-                  <div className="px-6 pb-4 text-[12px] md:text-[14px] text-[#1D2939] ">
+                  <div className=" md:px-6 md:py-4  md:text-[14px] text-[#1D2939] text-[0.85rem] sm:text-[12px]  font-medium"
+                  style={{ fontFamily: "Montserrat" }}>
                     <p>{question.answer}</p>
                   </div>
                 )}
@@ -102,15 +103,15 @@ const footer = () => {
         </div>
       </div>
       <footer>
-        <div className="bg-[#F3722029] w-full h-[35vh]">
-          <div className='h-full flex flex-col items-center justify-center'>
-            <img src="logo.svg" alt="" />
+        <div className="bg-[#F3722029] w-full h-[30vh]">
+          <div className='h-full flex flex-col items-center justify-center pb-10'>
+            <img src="logo.svg" alt="" className="h-12  my-6 md:h-28" />
             <div className='flex  items-center justify-center gap-2'>
               <img src="insta.svg" alt=""   />
               <img src="fb.svg" alt="" />
               <img src="x.svg" alt="" />
             </div>
-            <div className='mt-4 w-[40%] border border-b-black opacity-10  '>
+            <div className='mt-6 w-full md:w-[40%] border border-b-black opacity-10  '>
 
             </div>
             <div className='flex flex-col md:flex-row  mt-4 items-center justify-center text-[#1A151A]' style={{fontFamily:"Montserrat"}}>

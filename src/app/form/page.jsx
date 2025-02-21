@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Add framer-motion for smooth
 //  swipe animations
 import { useRouter } from "next/navigation";
+import { Image } from 'next/image';
 // Questions configuration remains the same
 const Questions = {
   first: {
@@ -27,21 +28,18 @@ const Questions = {
     question: "What's your dog's vibe??",
     about: "Pick one that matches their personality!",
     input: (value, setValue) => (
-      <div className="flex flex-row gap-4 justify-start gap-2">
+      <div className="flex flex-row gap-4 justify-start  flex-wrap md:flex-nowrap">
         {[
           { name: "Couch Poteto", image: "/couch.svg" },
-          { name: "Wild Wolf", image: "/couch.svg" },
-          { name: "Happy-Go-Lucky", image: "/couch.svg" },
-          { name: "Nervous Nelly", image: "/couch.svg" },
+          { name: "Wild Wolf", image: "/wolf.svg" },
+          { name: "Happy-Go-Lucky", image: "/panjo2.svg" },
+          { name: "Nervous Nelly", image: "/teethSmile.svg" },
         ].map((breed) => (
           <div
             key={breed.name}
-            className={`card p-4 border rounded-lg cursor-pointer transition-all duration-300 w-[100%] 
-              ${
-                value === breed.name
-                  ? "border-green-500 bg-green-100"
-                  : "border-gray-300"
+            className={`relative card h-[23vh] p-4 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition-all duration-300 w-[100%] ${value === breed.name ? "border-green-500 bg-green-100" : "border-gray-300"
               }`}
+
             onClick={() => setValue(breed.name)}
           >
             <img
@@ -49,6 +47,13 @@ const Questions = {
               alt={breed.name}
               className="w-16 h-16 mx-auto mb-2"
             />
+            {value === breed.name && (
+              <img
+                src="/tick.svg"
+                alt="Selected"
+                className="absolute top-3 right-3"
+              />
+            )}
             <h3 className="text-center font-semibold text-sm">{breed.name}</h3>
           </div>
         ))}
@@ -194,20 +199,16 @@ const Questions = {
     question: "What does your dog dream about?",
     about: "Tell us about their favorite fantasies!",
     input: (value, setValue) => (
-      <div className="flex flex-row gap-4 justify-start ">
+      <div className="flex flex-row gap-10 justify-start  flex-wrap md:flex-nowrap">
         {[
-          { name: "Tasty treats!", image: "/couch.svg" },
-          { name: "Rolling in the grass", image: "/couch.svg" },
-          { name: "Belly rubs on repeat", image: "/couch.svg" },
-          { name: "Chasing squirrels", image: "/couch.svg" },
+          { name: "Tasty treats!", image: "/meat.svg" },
+          { name: "Rolling in the grass", image: "/wheat.svg" },
+          { name: "Belly rubs on repeat", image: "/hands.svg" },
+          { name: "Chasing squirrels", image: "/sqrr.svg" },
         ].map((breed) => (
           <div
             key={breed.name}
-            className={`card p-4 border rounded-lg cursor-pointer transition-all duration-300 w-[100%] 
-              ${
-                value === breed.name
-                  ? "border-green-500 bg-green-100"
-                  : "border-gray-300"
+            className={`relative card h-[23vh] p-4 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition-all duration-300 w-[100%] ${value === breed.name ? "border-green-500 bg-green-100" : "border-gray-300"
               }`}
             onClick={() => setValue(breed.name)}
           >
@@ -216,6 +217,13 @@ const Questions = {
               alt={breed.name}
               className="w-16 h-16 mx-auto mb-2"
             />
+            {value === breed.name && (
+              <img
+                src="/tick.svg"
+                alt="Selected"
+                className="absolute top-3 right-3"
+              />
+            )}
             <h3 className="text-center font-semibold text-sm">{breed.name}</h3>
           </div>
         ))}
@@ -261,23 +269,16 @@ const Questions = {
     question: "If your dog could speak, what would they ask for?",
     about: "The ultimate wish from your fur-baby:",
     input: (value, setValue) => (
-      <div className="flex flex-row gap-4 justify-start ">
+      <div className="flex flex-row gap-10 justify-start flex-wrap md:flex-nowrap">
         {[
-          {
-            name: "Help me chill out, I’m always anxious!",
-            image: "/couch.svg",
-          },
-          { name: "My belly needs a little TLC.", image: "/couch.svg" },
-          { name: "My skin’s been itchy, fix it!", image: "/couch.svg" },
-          { name: "I just want to feel my best!", image: "/couch.svg" },
+          { name: "Help me chill out, I’m always anxious!", image: "/sad.svg" },
+          { name: "My belly needs a little TLC.", image: "/kutro.svg" },
+          { name: "My skin’s been itchy, fix it!", image: "/bath.svg" },
+          { name: "I just want to feel my best!", image: "/star.svg" },
         ].map((breed) => (
           <div
             key={breed.name}
-            className={`card p-4 border rounded-lg cursor-pointer transition-all duration-300 w-[100%] 
-              ${
-                value === breed.name
-                  ? "border-green-500 bg-green-100"
-                  : "border-gray-300"
+            className={`relative card h-[23vh] p-4 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition-all duration-300 w-[100%] ${value === breed.name ? "border-green-500 bg-green-100" : "border-gray-300"
               }`}
             onClick={() => setValue(breed.name)}
           >
@@ -286,6 +287,13 @@ const Questions = {
               alt={breed.name}
               className="w-16 h-16 mx-auto mb-2"
             />
+            {value === breed.name && (
+              <img
+                src="/tick.svg"
+                alt="Selected"
+                className="absolute top-3 right-3"
+              />
+            )}
             <h3 className="text-center font-semibold text-sm">{breed.name}</h3>
           </div>
         ))}
@@ -305,7 +313,7 @@ const Questions = {
     question: "Your Perfect Match!",
     about: "Based on your answers, here is jammy's recommended supplement care plan.",
     input: (value, setValue) => (
-      <div className="flex flex-row gap-4 justify-start ">
+      <div className="flex flex-row gap-4 justify-start flex-wrap md:flex-nowrap">
         {[
           {
             name: "Mellow Chews",
@@ -328,8 +336,8 @@ const Questions = {
         ].map((breed) => (
           <div
             key={breed.name}
-            className={`card p-4 border rounded-lg cursor-pointer transition-all duration-300 w-[100%] ${breed.bgColor}
-              ${value.includes(breed.name) ? "border-green-500" : "border-gray-300"}`}
+            className={`relative card p-4 border rounded-lg cursor-pointer transition-all duration-300 w-[80vw] ${breed.bgColor} ${value.includes(breed.name) ? "border-green-500" : "border-gray-300"
+              }`}
             onClick={() => {
               const newValue = value.includes(breed.name)
                 ? value.filter((item) => item !== breed.name)
@@ -340,8 +348,15 @@ const Questions = {
             <img
               src={breed.image}
               alt={breed.name}
-              className="w-32 h-32 mx-auto mb-2"
+              className="w-32 h-45 mx-auto mb-2"
             />
+            {value.includes(breed.name) && (
+              <img
+                src="/tick.svg"
+                alt="Selected"
+                className="absolute top-3 right-3"
+              />
+            )}
             <h3
               className="text-center font-semibold text-sm"
               style={{ fontFamily: "Inter" }}
@@ -358,29 +373,29 @@ const Questions = {
         ))}
       </div>
     ),
-  },
-  twelve: {
-    question: "",
-    about: "",
-    input: (value, setValue) => (
-      <div className="flex flex-col  gap-4 items-center justify-start ">
-        <img src="/smile.svg" alt="" className="object-cover" />
-        <h1
-          className="text-[30px] font-semibold w-[60%]"
-          style={{ fontFamily: "Inter" }}
-        >
-          Thank you for choosing Gut Relief Chews, and Simply Soft Skin Chew.
-          Checkout or continue shopping
-        </h1>
-      </div>
-    ),
-  },
+},
+twelve: {
+  question: "",
+  about: "",
+  input: (value, setValue) => (
+    <div className="flex flex-col  gap-4 items-center justify-start  flex-wrap md:flex-nowrap">
+      <img src="/smile.svg" alt="" className="object-cover" />
+      <h1
+        className="text-2xl md:text-[30px] font-semibold w-[70%] md:w-[60%]"
+        style={{ fontFamily: "Inter" }}
+      >
+        Thank you for choosing Gut Relief Chews, and Simply Soft Skin Chew.
+        Checkout or continue shopping
+      </h1>
+    </div>
+  ),
+},
 };
+
+
 
 const FORM = () => {
   const router = useRouter();
-
-  // State management for all questions
   const [dogName, setDogName] = useState("");
   const [dogVibe, setDogVibe] = useState("");
   const [dogAge, setDogAge] = useState("");
@@ -390,23 +405,28 @@ const FORM = () => {
   const [dogDream, setDogDream] = useState("");
   const [coatCondition, setCoatCondition] = useState("");
   const [dogWish, setDogWish] = useState("");
-  const [step, setStep] = useState(11);
+
+  const [step, setStep] = useState(1);
+
   const [responses, setResponses] = useState({});
   const [swipeDirection, setSwipeDirection] = useState(0);
   const [selectedSupplements, setSelectedSupplements] = useState([]);
 
-  const totalSteps = 10;
-  const progressWidth = step >= 10 ? 100 : (step / totalSteps) * 100;
 
-  // Track touch events for swipe functionality
+  const totalSteps = 10;
+ // Calculate progress percentage based on step
+  // step - 1 because step 1 should be 0%, step 2 should be between first and second marker, etc.
+  const progressWidth = Math.min(
+    100, // Maximum 100%
+    ((step - 1) / (totalSteps - 1)) * 100 // Calculate percentage based on 0-9 intervals
+  );
+
+
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
-
-  // Remove the separate function and direct call
-  // Instead, use useEffect to handle the timeout
 
   useEffect(() => {
     let timeoutId;
@@ -509,7 +529,7 @@ const FORM = () => {
   const handleSubmit = (e) => {
     setTimeout(() => {
       setStep(step + 1);
-    }, 4000);
+    }, 500);
     e.preventDefault();
 
     const formData = {
@@ -579,12 +599,13 @@ const FORM = () => {
       case 11:
         return setSelectedSupplements;
       default:
-        return () => {};
+        return () => { };
     }
   };
 
   const currentQuestionKey = Object.keys(Questions)[step - 1];
   const { question, about, input } = Questions[currentQuestionKey] || {};
+
 
   return (
     <div
@@ -596,66 +617,77 @@ const FORM = () => {
       <img src="/logo.svg" alt="" />
       {step !== 12 ? (
         <h1
-          className="text-[32px] font-bold text-center text-black"
+          className="text-[25px] md:text-[32px]  font-bold text-center text-black"
           style={{ fontFamily: "Inter" }}
         >
           Find Your Dog's Perfect Supplement!
         </h1>
       ) : null}
 
-      <div className="w-full max-w-[50%] mt-6 ">
+      <div className="w-full  max-w-[100%] md:max-w-[40%] mt-6 ">
         {/* Progress Bar */}
         <div className=" flex  items-center justify-center">
-          <div className="w-[95%]  bg-gray-200 h-[12px] rounded-full  relative flex flex-col items-start justify-start">
-            <motion.div
-              className="bg-[#9ACA3B] h-[12px] rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: `${progressWidth}%` }}
-              transition={{ duration: 0.3 }}
-            />
-            <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2">
-              {[...Array(totalSteps)].map((_, i) => (
-                <div key={i}>
-                  <img src="/polyon.svg" className="h-[12px]" alt="" />
-                </div>
-              ))}
+        <div 
+        className="w-[95%] bg-gray-200 h-[12px] rounded-full relative flex flex-col items-start justify-start"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <motion.div
+          className="bg-[#9ACA3B] h-[12px] rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${progressWidth}%` }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        />
+        <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2">
+          {[...Array(totalSteps)].map((_, i) => (
+            <div key={i}>
+              <img 
+                src="/polyon.svg" 
+                className="h-[12px]" 
+                alt={`Step ${i + 1}`} 
+              />
             </div>
-          </div>
+          ))}
         </div>
-        {/* <div className='flex items-start justify-center'> */}
-
+      </div>
+        </div>
         <button
           onClick={handleBack}
           className="px-1 py-1 ml-[1%] bg-opacity-5 text-white pt-10 rounded-full"
-          // disabled={step === 1}
+        // disabled={step === 1}
         >
           <img src="/back.svg" alt="" className="h-[20px]" />
         </button>
-        {/* </div> */}
-
         <div className="question-container min-h-[250px] w-full flex flex-col items-center justify-center">
-          <div className="w-full max-w-[95%] flex flex-col items-start ">
-            <h2
-              className="text-[24px] font-semibold text-black font-inter text-center"
+          <div className="w-full max-w-[95%] flex flex-col items-center ">
+           <div className='flex flex-col items-start self-baseline'>
+           <h2
+              className="text-[1.3rem] md:text-[24px] font-semibold text-black font-inter text-start md:text-center "
               style={{ fontFamily: "Inter" }}
             >
               {step !== 12 && step !== 11 && step} &nbsp;
               {question}
             </h2>
             <p
-              className="text-gray-600 mb-8 text-center"
+              className="text-gray-600 mb-8 text-[1rem] text-start md:text-center"
               style={{ fontFamily: "Montserrat" }}
             >
               {about}
             </p>
-            <div className={`w-full flex items-start ${step===10 ? "justify-center" :"justify-start"} `}>
+           </div>
+            <div
+              className={` ${(step === 10) || (step === 2) || (step === 7) || (step === 9)
+                  ? " w-full md:w-[150%] "
+                  : "justify-start w-full"
+                }`}
+            >
               {input && input(getCurrentValue(), getCurrentSetter())}
             </div>
           </div>
         </div>
-        {/* Navigation Buttons */}
         <div
-          className="flex justify-between mt-4 w-full text-[18px]"
+          className="flex justify-between mt-8 w-full text-[18px]"
           style={{ fontFamily: "Inter" }}
         >
           {step === totalSteps || step === 10 || step === 12 ? null : (
@@ -675,20 +707,21 @@ const FORM = () => {
                   (step === 9 && dogWish === "") ||
                   (step === 11 && selectedSupplements.length === 0))
               }
-              className={`px-4 py-2 w-full  rounded-lg ${
-                (step !== 10 && step !== 11 && getCurrentValue() === "") ||
+              className={`px-4 py-2  mb-6 w-full ml-[2.5%] mr-[2.5%] md:mb-2 rounded-lg ${(step !== 10 && step !== 11 && getCurrentValue() === "") ||
                 (step === 11 && selectedSupplements.length === 0)
-                  ? "cursor-not-allowed font-bold text-[#98A2B3] bg-[#F2F4F7]"
-                  : "bg-orange-500 hover:bg-orange-600 text-white"
-              }`}
+                ? "cursor-not-allowed font-bold text-[#98A2B3] bg-[#F2F4F7]"
+                : "bg-orange-500 hover:bg-orange-600 text-white"
+                }`}
             >
               {step === 11 ? "Select Your Care Package →" : "Next →"}
             </button>
           )}
         </div>
       </div>
-    </div>
-  );
-};
 
-export default FORM;
+
+    </div>
+  )
+}
+
+export default FORM
